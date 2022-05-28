@@ -1,0 +1,108 @@
+<% layout('layouts/boilerplate')%>
+    <!-- <div id="cluster-map"></div> -->
+    <div class="container">
+        <h1>Various Categories For Products Are</h1>
+
+        <!-- Product Type-1-->
+        <div class="card mb-3">
+            <div class="row">
+                <div class="col-md-4">
+
+
+                    <img class="img-fluid" alt="" src="https://res.cloudinary.com/mrarthor/image/upload/w_350,h_200,c_scale/YelpCamp/samsung-tv-sale-kr-2x1-tease-200717_j4qbk7.gif">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Television </h5>
+
+                        <p class="card-text">
+
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted"></small>
+                        </p>
+                        <a class="btn btn-primary" href="TV/Productsitem/">View</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Product Type-2-->
+        <div class="card mb-3">
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="img-fluid" alt="" src="https://res.cloudinary.com/mrarthor/image/upload/w_350,h_200,c_scale/YelpCamp/laptop_1_azh1mw.gif">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Laptop
+                            <%=// Product.title %>
+                        </h5>
+
+                        <p class="card-text">
+                            <%=// Product.description %>
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted"><%=// Product.location%></small>
+                        </p>
+                        <a class="btn btn-primary" href="Laptop/Productsitem/">View <%=//Product.title%></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Product Type-3-->
+        <div class="card mb-3">
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="img-fluid" alt="" src="https://res.cloudinary.com/mrarthor/image/upload/w_350,h_200,c_scale/YelpCamp/706693c6b3c6940dbd67d41c69183ec4_qx1ahy.gif">
+
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Mobile
+                            <%=// Product.title %>
+                        </h5>
+
+                        <p class="card-text">
+                            <%=// Product.description %>
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted"><%=// Product.location%></small>
+                        </p>
+                        <a class="btn btn-primary" href="Mobile/Productsitem/">View <%=//Product.title%></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card mb-3">
+        <div class="row">
+            <div class="col-md-4">
+                <img class="img-fluid" alt="" src="https://res.cloudinary.com/mrarthor/image/upload/w_350,h_200,c_scale/YelpCamp/gaming_fargg2.gif">
+
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        Gaming Consoles
+                        <%=// Product.title %>
+                    </h5>
+
+                    <p class="card-text">
+                        <%=// Product.description %>
+                    </p>
+                    <p class="card-text">
+                        <small class="text-muted"><%=// Product.location%></small>
+                    </p>
+                    <a class="btn btn-primary" href="Console/Productsitem/">View <%=//Product.title%></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+    </script>
+
+    <script src="/javascripts/clusterMap.js"></script>
