@@ -8,7 +8,7 @@ module.exports.index = async(req, res) => {
     const Category = req.params.product;
     const Productsitem = await Products.find({ category: Category }).populate('popupText');
     quickSortReverse(Productsitem, 0, Productsitem.length - 1);
-    //console.log(Productsitem);
+
     res.render('Productsitem/index', { Productsitem, Category })
 }
 
@@ -22,7 +22,7 @@ module.exports.createCampground = async(req, res, next) => {
     Productsitem.images = req.files.map(f => ({ url: f.path, filename: f.filename }));
     Productsitem.author = req.user._id;
     await Productsitem.save();
-    console.log(Productsitem);
+
     req.flash('success', 'Successfully made a new Productsitem!');
     res.redirect(`/Productsitem/${Productsitem._id}`)
 }
@@ -48,13 +48,14 @@ module.exports.showCampground = async(req, res, ) => {
 }
 
 module.exports.renderEditForm = async(req, res) => {
-    const { id } = req.params;
+    const { product, id } = req.params;
+
     const Productsitem = await Products.findById(id)
     if (!Productsitem) {
         req.flash('error', 'Cannot find that Productsitem!');
-        return res.redirect('/Productsitem');
+        return res.redirect('/req.params.product/Productsitem');
     }
-    res.render('Productsitem/edit', { Productsitem });
+    res.render('Productsitem/edit', { Productsitem, product });
 }
 
 module.exports.updateCampground = async(req, res) => {
@@ -71,12 +72,12 @@ module.exports.updateCampground = async(req, res) => {
         await Productsitem.updateOne({ $pull: { images: { filename: { $in: req.body.deleteImages } } } })
     }
     req.flash('success', 'Successfully updated Productsitem!');
-    res.redirect(`/Productsitem/${Productsitem._id}`)
+    res.redirect(`${product}/Productsitem/${Productsitem._id}`)
 }
 
 module.exports.deleteCampground = async(req, res) => {
-    const { id } = req.params;
+    const { product, id } = req.params;
     await Products.findByIdAndDelete(id);
     req.flash('success', 'Successfully deleted Productsitem')
-    res.redirect('/Productsitem');
+    res.redirect(`${product}/Productsitem`);
 }

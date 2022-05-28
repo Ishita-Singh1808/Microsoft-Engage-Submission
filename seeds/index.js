@@ -123,7 +123,7 @@ const seedDB = async() => {
                 filename: "YelpCamp/ahfnenvca4tha00h2ubt",
             }, ],
 
-            TotalRating: `${random10}                                   `,
+            TotalRating: `${random10}`,
             TotalViews: 0,
         });
         await camp.save();
